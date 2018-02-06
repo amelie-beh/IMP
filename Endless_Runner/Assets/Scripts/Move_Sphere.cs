@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class Move_Sphere : MonoBehaviour {
 	
-	public KeyCode moveL;
-	public KeyCode moveR;
-
 	public float horizVel = 0;
 	public int laneNum = 0;
 	public string controllocked = "n";
@@ -41,8 +38,8 @@ public class Move_Sphere : MonoBehaviour {
 		transform.position = newPostition;
 	}
 	IEnumerator stopSlide(){
-		yield return new WaitForSeconds (0);
-		horizVel = 0;
+		yield return new WaitForSeconds (0.2f);
+		horizVel = 10;
 		controllocked = "n";
 	}
 }
