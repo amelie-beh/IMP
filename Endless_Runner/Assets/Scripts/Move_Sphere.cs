@@ -7,38 +7,41 @@ public class Move_Sphere : MonoBehaviour {
 	
 	public KeyCode moveL;
 	public KeyCode moveR;
-	
+
 	public float horizVel = 0;
-	public int laneNum = 2;
+	public int laneNum = 0;
 	public string controllocked = "n";
 	
 	public Swipe swipeControls;
-	public Transform player;
-	private Vector3 desiredPosition;
 	
 	void Start () {
-		
 	}
 	
 	void Update () {
+		//X - Left and right
+		//Y Up and down
+		//Z Forward and backwards
 		
-		GetComponent<Rigidbody>().velocity = new Vector3 (horizVel, 0, 4);
-		
-		if (Input.GetKeyDown(moveL) || (swipeControls.SwipeLeft) && (laneNum>1)&& (controllocked== "n")){
-			horizVel = -2;
+		if ((swipeControls.SwipeLeft)&&(laneNum >= 0)&&(controllocked== "n")){
+			horizVel = -1;
 			StartCoroutine (stopSlide());
-			laneNum -= 1;
 			controllocked = "y";
+			laneNum--;
+			Debug.Log(laneNum);
 		}
-		if (Input.GetKeyDown(moveR) || (swipeControls.SwipeRight) && (laneNum<3)&& (controllocked== "n")){
-			horizVel = 2;
+		if ((swipeControls.SwipeRight)&&(laneNum <= 0)&&(controllocked== "n")){
+			horizVel = 1;
 			StartCoroutine (stopSlide());
-			laneNum += 1;
 			controllocked = "y";
+			laneNum++;
+			Debug.Log(laneNum);
 		}
+		Vector3 newPostition = transform.position;
+		newPostition.x = laneNum;
+		transform.position = newPostition;
 	}
 	IEnumerator stopSlide(){
-		yield return new WaitForSeconds ( .5f);
+		yield return new WaitForSeconds (0);
 		horizVel = 0;
 		controllocked = "n";
 	}
