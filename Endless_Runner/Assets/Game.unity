@@ -2299,8 +2299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809cb5f5b70f3e945b1510c04fbf89e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveL: 97
-  moveR: 100
   horizVel: 0
   laneNum: 0
   controllocked: n
