@@ -10,7 +10,7 @@ public class ChangePosition_ObjectHolder : MonoBehaviour {
 	void Update () {
 
 		if (transform.position.z < 0) {
-			objectHolder.transform.position = new Vector3(0.5f, 3, 36);
+			objectHolder.transform.position = new Vector3(0.5f, 3, 54);
 		}
 	}
 }

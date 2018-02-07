@@ -10,6 +10,7 @@ public class DestroyEnemies : MonoBehaviour {
 		count++;
 		if (count == 5) {
 			Destroy (gameObject);
+			Debug.Log (count);
 		}
 	}
 }
