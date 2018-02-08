@@ -8,8 +8,9 @@ public class Swipe : MonoBehaviour {
 	private bool isDraging = false;
 	private Vector2 startTouch, swipeDelta;
 	
-
+	
 	private void Update () {
+		//when sombody touches the display set it true
 		tap = swipeLeft = swipeRight = swipeUp = swipeDown = false;
 		
 		#region Standalone Inputs
@@ -17,26 +18,27 @@ public class Swipe : MonoBehaviour {
 			tap = true;
 			isDraging = true;
 			startTouch = Input.mousePosition;
-		} else if(Input.GetMouseButtonUp(0)){
+		} else if(Input.GetMouseButtonUp(0)){ //end of touch = false
 			Reset();
 			isDraging = false;
 		}
 		#endregion
 		
+		//duration of touch
 		#region Mobile Inputs
 		if(Input.touches.Length > 0){
 			if(Input.touches[0].phase == TouchPhase.Began){
 				isDraging = true;
 				tap = true;
 				startTouch = Input.touches[0].position;
-			} else if(Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase ==TouchPhase.Canceled){
+			} else if(Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled){
 				Reset();
 				isDraging = false;
 			}
 		}
 		#endregion
 		
-		//Calculate the distance
+		//Calculate the distance of the touch
 		swipeDelta = Vector2.zero;
 		if (isDraging){
 			if(Input.touches.Length > 0){
@@ -45,7 +47,7 @@ public class Swipe : MonoBehaviour {
 				swipeDelta = (Vector2)Input.mousePosition - startTouch;
 			}
 		}
-		//did we cross the deadzone?
+		//did we cross the deadzone? /zone that a touch is really a swipe
 		if(swipeDelta.magnitude > 150){
 			//wich direction?
 			float x = swipeDelta.x;
@@ -69,12 +71,13 @@ public class Swipe : MonoBehaviour {
 			Reset();
 		}
 	}
-	
+	//if touch ended do this
 	private void Reset () {
 		startTouch =  swipeDelta = Vector2.zero;
 		isDraging = false;	
 	}
-	
+	//Variables we need
+
 	public bool Tap{get { return tap; }}
 	public Vector2 SwipeDelta{get { return swipeDelta;} }
 	public bool SwipeLeft {get {return swipeLeft; } }
