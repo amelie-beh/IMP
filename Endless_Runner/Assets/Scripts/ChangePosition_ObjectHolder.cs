@@ -11,7 +11,7 @@ public class ChangePosition_ObjectHolder : MonoBehaviour {
 	// If ObjectHolder is behind the player's sight, the position will be changed to create a loop of ObjectHolders
 	void Update () {
 		for (int i = 0; i <= 4; i++) {
-			int j = i % 4;
+			int j = i % 5;
 			if (objectHolders[j].transform.position.z <= 0) {
 				objectHolders[j].transform.position = new Vector3 (0.5f, 3, 54);
 				objectHolders[j].SetActive (false);
