@@ -8,7 +8,6 @@ public class Move_Player : MonoBehaviour {
 	private Rigidbody player;
 	
 	public float jumpHeight = -3f;
-	private bool falling = false;
 	
 	public float z = -4;
 	public int laneNum = 0;
@@ -36,19 +35,12 @@ public class Move_Player : MonoBehaviour {
 			controllocked = "y";
 			laneNum++;
 			StartCoroutine(stopSlide());
-			//transform.position = new Vector3(laneNum, jump, z);
 		}
 		if ((swipeControls.SwipeUp)&&(controllocked== "n")){
 			controllocked = "y";
 			jumpHeight = 3f;
             StartCoroutine(stopJump());
 		}
-		
-		//Vector3 newPostition = transform.position;
-		//newPostition.x = laneNum;
-		//transform.position = newPostition;
-		
-		
 	}
 	IEnumerator stopJump(){
         yield return new WaitForSeconds(0.5F);
