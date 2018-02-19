@@ -11,31 +11,28 @@ public class Menu_Functions : MonoBehaviour {
 	public Text endScore;
 	public Canvas PauseCanvas;
 	public Canvas EndScreenCanvas;
+	private int t;
 	
 	void Start () {
 		startTime = Time.time;
 		Time.timeScale = 1;
-		
+		t = 0;
 	}
-	
 
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape)) { 
 			StartPause();
 		 }
+		 
 		 //Der Angezeigte Highscore am Bildschirm
-		 int t = (int)(Time.time - startTime); 
+		 t = (int)(Time.time - startTime); 
 		 score.text = t.ToString();
 		 
-		 
-		 if(EndScreenCanvas.enabled){
-			 if(t > PlayerPrefs.GetInt("HS1")){
-				 PlayerPrefs.SetInt("HS1", t);
-			 }
-			endScore.text = ("Nummer 1 = " + PlayerPrefs.GetInt("HS1").ToString() );
-			t = PlayerPrefs.GetInt("HS1");
-		 }
-	}
+		if(t > PlayerPrefs.GetInt("HS1")){
+			PlayerPrefs.SetInt("HS1", t);
+		}
+		endScore.text = ("Nummer 1 = " + PlayerPrefs.GetInt("HS1").ToString() );
+		}
 	
 	
 	public void StartPause(){
