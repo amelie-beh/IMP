@@ -8,11 +8,11 @@ public class ChangePosition_Controller : MonoBehaviour {
 		
 	public void SetRandomActive () {
 		int r = Random.Range (0, 5);
-		if (ObjectHolders [r].activeInHierarchy == false) {
+		if (ObjectHolders [r].activeInHierarchy == true) {
+			SetRandomActive ();
+		} else {
 			ObjectHolders [r].SetActive (true);
 			Debug.Log (r);
-		} else {
-			SetRandomActive ();
 		}
 	}
 }
