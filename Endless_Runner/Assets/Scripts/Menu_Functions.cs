@@ -31,7 +31,7 @@ public class Menu_Functions : MonoBehaviour {
 		if(t > PlayerPrefs.GetInt("HS1")){
 			PlayerPrefs.SetInt("HS1", t);
 		}
-		endScore.text = ("Nummer 1 = " + PlayerPrefs.GetInt("HS1").ToString() );
+		endScore.text = ("Highscore = " + PlayerPrefs.GetInt("HS1").ToString() );
 		}
 	
 	
