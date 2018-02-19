@@ -12,6 +12,7 @@ public class Menu_Functions : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		startTime = Time.time;
+		Time.timeScale = 1;
 	}
 	
 	// Update is called once per frame
