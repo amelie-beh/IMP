@@ -10,8 +10,8 @@ public class SlideUnderObject : MonoBehaviour {
 		if(GameObject.Find("Sphere1").GetComponent<Move_Player>().isSliding==true){
 			Debug.Log ("Juhu");
 		} else {
-			//EndScreenCanvas.gameObject.SetActive(true);
-			//Time.timeScale = 0;
+			EndScreenCanvas.gameObject.SetActive(true);
+			Time.timeScale = 0;
 			Debug.Log("Game Over");
 			
 		}
