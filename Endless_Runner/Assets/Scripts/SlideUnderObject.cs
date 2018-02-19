@@ -9,6 +9,7 @@ public class SlideUnderObject : MonoBehaviour {
 			Debug.Log ("Juhu");
 		} else {
 			Debug.Log("Game Over");
+			
 		}
 	}
 }

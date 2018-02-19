@@ -8,21 +8,36 @@ public class Menu_Functions : MonoBehaviour {
 	
 	private float startTime;
 	public Text score;
+	public Text endScore;
 	public Canvas PauseCanvas;
-	// Use this for initialization
+	public Canvas EndScreenCanvas;
+	
 	void Start () {
 		startTime = Time.time;
 		Time.timeScale = 1;
+		
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape)) { 
 			StartPause();
 		 }
+		 //Der Angezeigte Highscore am Bildschirm
 		 int t = (int)(Time.time - startTime); 
 		 score.text = t.ToString();
+		 
+		 
+		 if(EndScreenCanvas.enabled){
+			 if(t > PlayerPrefs.GetInt("HS1")){
+				 PlayerPrefs.SetInt("HS1", t);
+			 }
+			endScore.text = ("Nummer 1 = " + PlayerPrefs.GetInt("HS1").ToString() );
+			t = PlayerPrefs.GetInt("HS1");
+		 }
 	}
+	
+	
 	public void StartPause(){
 		
 		PauseCanvas.gameObject.SetActive(true);
