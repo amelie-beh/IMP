@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu_Functions : MonoBehaviour {
 	
+	private float startTime;
+	public Text score;
 	public Canvas PauseCanvas;
 	// Use this for initialization
 	void Start () {
-		
+		startTime = Time.time;
 	}
 	
 	// Update is called once per frame
@@ -16,6 +19,8 @@ public class Menu_Functions : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Escape)) { 
 			StartPause();
 		 }
+		 int t = (int)(Time.time - startTime); 
+		 score.text = t.ToString();
 	}
 	public void StartPause(){
 		
