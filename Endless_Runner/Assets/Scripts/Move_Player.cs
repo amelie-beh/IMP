@@ -13,6 +13,8 @@ public class Move_Player : MonoBehaviour {
 	public int laneNum = 0;
 	public string controllocked = "n";
 	public Swipe swipeControls;
+	public bool isSliding; 
+	public bool isJumping;
 	
 	public float horizVel = 0;
 	
@@ -34,18 +36,26 @@ public class Move_Player : MonoBehaviour {
 			horizVel = 3.3f;
 			controllocked = "y";
 			laneNum++;
-			StartCoroutine(stopSlide());
+			StartCoroutine(stopSlide());	
 		}
 		if ((swipeControls.SwipeUp)&&(controllocked== "n")){
 			controllocked = "y";
 			jumpHeight = 3f;
             StartCoroutine(stopJump());
+			isJumping = true;
+		}
+		if ((swipeControls.SwipeDown)&&(controllocked== "n")){
+			controllocked = "y";
+			isSliding = true;
+			//animation
+			StartCoroutine(stopSliding());
 		}
 	}
 	IEnumerator stopJump(){
         yield return new WaitForSeconds(0.5F);
         jumpHeight = -2;
         controllocked = "n";
+		isJumping = false;
 		
 	}
 	IEnumerator stopSlide(){
@@ -54,6 +64,12 @@ public class Move_Player : MonoBehaviour {
         controllocked = "n";
 		transform.position = new Vector3(laneNum, 4.37f, z);
 	}
+	IEnumerator stopSliding(){
+        yield return new WaitForSeconds(0.5F);
+        isSliding = false;
+		controllocked = "n";
+	}
+	
 }
 
 
