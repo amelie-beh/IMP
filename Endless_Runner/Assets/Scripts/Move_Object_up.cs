@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move_Object_xx : MonoBehaviour {
+public class Move_Object_up : MonoBehaviour {
 
 	//ObjectHolder bewegt sich in Richtung des Players
 	public float movementSpeed;

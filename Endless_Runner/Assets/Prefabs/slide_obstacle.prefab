@@ -9,55 +9,55 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1698606845980382}
+  m_RootGameObject: {fileID: 1586310893754954}
   m_IsPrefabParent: 1
---- !u!1 &1698606845980382
+--- !u!1 &1586310893754954
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4356224333503944}
-  - component: {fileID: 33584308903444478}
-  - component: {fileID: 23431207111528048}
-  - component: {fileID: 65613886680717246}
-  - component: {fileID: 114232233560564454}
-  - component: {fileID: 114814308560114494}
+  - component: {fileID: 4063305239174858}
+  - component: {fileID: 33415216074435174}
+  - component: {fileID: 23357160277394792}
+  - component: {fileID: 95268517651722458}
+  - component: {fileID: 65441519627787518}
+  - component: {fileID: 114533780263547760}
   m_Layer: 0
-  m_Name: Candy_Cane
-  m_TagString: Untagged
+  m_Name: slide_obstacle
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &4356224333503944
+  m_IsActive: 1
+--- !u!4 &4063305239174858
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1698606845980382}
-  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: 1.08, y: 5.18, z: 16.55}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_GameObject: {fileID: 1586310893754954}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.24, y: 4.36, z: 24.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 270}
---- !u!23 &23431207111528048
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23357160277394792
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1698606845980382}
+  m_GameObject: {fileID: 1586310893754954}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d4980f01d7d5a2942a6e2c650ca74968, type: 2}
+  - {fileID: 2100000, guid: 318b43e860f07474d8d7bd8f312c8b66, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,46 +75,51 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33584308903444478
+--- !u!33 &33415216074435174
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1698606845980382}
-  m_Mesh: {fileID: 4300030, guid: 780cb748b5455784da3e6d9dd583c819, type: 3}
---- !u!65 &65613886680717246
+  m_GameObject: {fileID: 1586310893754954}
+  m_Mesh: {fileID: 4300000, guid: 83534ee7174c44bf3ab05fe215e4e4e4, type: 3}
+--- !u!65 &65441519627787518
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1698606845980382}
+  m_GameObject: {fileID: 1586310893754954}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5, z: 1.905324}
-  m_Center: {x: -0.21516049, y: -0.0027900003, z: -0.334082}
---- !u!114 &114232233560564454
+  m_Size: {x: 1.1999999, y: 0.4770617, z: 1.1999999}
+  m_Center: {x: 0, y: -0.18558544, z: 0}
+--- !u!95 &95268517651722458
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1586310893754954}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 83534ee7174c44bf3ab05fe215e4e4e4, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114533780263547760
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1698606845980382}
+  m_GameObject: {fileID: 1586310893754954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e6a8c0f3c1b2534094b9aab273bd2b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EndScreenCanvas: {fileID: 0}
---- !u!114 &114814308560114494
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1698606845980382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4e34beaca7406b47b304a66133e0f4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 32a8e7b48f7678543a97c27537cd6e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 4
