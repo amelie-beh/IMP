@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Menu_Functions : MonoBehaviour {
-	
+	//All functions that are needed in the Menu
 	private float startTime;
 	public Text score;
 	public Text endScore;
@@ -20,15 +20,15 @@ public class Menu_Functions : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Escape)) { 
+		if (Input.GetKeyDown(KeyCode.Escape)) { //for the back taste on the phone
 			StartPause();
 		 }
 		 
-		 //Der Angezeigte Highscore am Bildschirm
+		 //The shown highscore on the display
 		 t = (int)(Time.time - startTime); 
 		 score.text = t.ToString();
 		 
-		if(t > PlayerPrefs.GetInt("HS1")){
+		if(t > PlayerPrefs.GetInt("HS1")){ //Setting the highscore
 			PlayerPrefs.SetInt("HS1", t);
 		}
 		endScore.text = ("Highscore = " + PlayerPrefs.GetInt("HS1").ToString() );
@@ -36,15 +36,14 @@ public class Menu_Functions : MonoBehaviour {
 	
 	
 	public void StartPause(){
-		
 		PauseCanvas.gameObject.SetActive(true);
 		Time.timeScale = 0;
 	}
+	
 	public void GoTo_MainMenu(){
-		
 		SceneManager.LoadScene(0);
-		
 	}
+	
 	public void Quit(){
 		#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
@@ -52,6 +51,7 @@ public class Menu_Functions : MonoBehaviour {
 			Application.Quit ();
 		#endif
 	}
+	
 	public void GoOn(){
 		PauseCanvas.gameObject.SetActive(false);
 		Time.timeScale = 1;

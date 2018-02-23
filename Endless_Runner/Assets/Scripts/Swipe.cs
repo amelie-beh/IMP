@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Swipe : MonoBehaviour {
 
+	//Variables we need
 	private bool tap, swipeLeft, swipeRight, swipeUp, swipeDown;
 	private bool isDraging = false;
 	private Vector2 startTouch, swipeDelta;
 	
 	
 	private void Update () {
-		//when sombody touches the display set it true
+		
 		tap = swipeLeft = swipeRight = swipeUp = swipeDown = false;
 		
 		#region Standalone Inputs
-		if(Input.GetMouseButtonDown(0)){
+		if(Input.GetMouseButtonDown(0)){//when sombody touches the display set it true
 			tap = true;
 			isDraging = true;
 			startTouch = Input.mousePosition;
@@ -31,7 +32,7 @@ public class Swipe : MonoBehaviour {
 				isDraging = true;
 				tap = true;
 				startTouch = Input.touches[0].position;
-			} else if(Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled){
+			} else if(Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled){ //when the touch ended oder stopped
 				Reset();
 				isDraging = false;
 			}
@@ -40,7 +41,7 @@ public class Swipe : MonoBehaviour {
 		
 		//Calculate the distance of the touch
 		swipeDelta = Vector2.zero;
-		if (isDraging){
+		if (isDraging){ 
 			if(Input.touches.Length > 0){
 				swipeDelta = Input.touches[0].position - startTouch;
 			} else if (Input.GetMouseButton(0)){
@@ -76,7 +77,7 @@ public class Swipe : MonoBehaviour {
 		startTouch =  swipeDelta = Vector2.zero;
 		isDraging = false;	
 	}
-	//Variables we need
+	//Set what to give out
 
 	public bool Tap{get { return tap; }}
 	public Vector2 SwipeDelta{get { return swipeDelta;} }

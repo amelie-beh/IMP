@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Move_Sphere : MonoBehaviour {
-	
+	//First try of a moving script
 	private Rigidbody player;
 	
 	public float z = -4;

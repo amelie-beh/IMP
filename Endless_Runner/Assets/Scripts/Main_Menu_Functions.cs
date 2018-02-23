@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Main_Menu_Functions : MonoBehaviour {
-
+	//Script for the Menu functions of the MainMenu
 	public void StartGame(){
 		SceneManager.LoadScene(1);
 	}
