@@ -2033,6 +2033,8 @@ MonoBehaviour:
   endScore: {fileID: 811691316}
   PauseCanvas: {fileID: 1761076216}
   EndScreenCanvas: {fileID: 895187671}
+  audioSlider: {fileID: 1625357511}
+  audio: 0
 --- !u!114 &972139330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2705,7 +2707,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 79814afd76185bc42879c338196c45f7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3c1b5581ea047494080b51db156048f7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.49
   m_Pitch: 1
@@ -3384,6 +3386,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1418026626}
         m_MethodName: set_volume
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 972139329}
+        m_MethodName: SliderIsUsed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

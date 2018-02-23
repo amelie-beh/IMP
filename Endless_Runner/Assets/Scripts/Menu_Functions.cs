@@ -12,8 +12,12 @@ public class Menu_Functions : MonoBehaviour {
 	public Canvas PauseCanvas;
 	public Canvas EndScreenCanvas;
 	private int t;
+	public Slider audioSlider;
+	public float audio;
 	
 	void Start () {
+		audio = PlayerPrefs.GetFloat("Audio");
+		audioSlider.value = audio;
 		startTime = Time.time;
 		Time.timeScale = 1;
 		t = 0;
@@ -55,5 +59,9 @@ public class Menu_Functions : MonoBehaviour {
 	public void GoOn(){
 		PauseCanvas.gameObject.SetActive(false);
 		Time.timeScale = 1;
+	}
+	public void SliderIsUsed(){
+		PlayerPrefs.SetFloat("Audio", audioSlider.value);
+		PlayerPrefs.Save ();
 	}
 }
