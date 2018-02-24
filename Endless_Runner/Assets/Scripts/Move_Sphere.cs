@@ -4,66 +4,94 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Move_Sphere : MonoBehaviour {
-	//First try of a moving script
-	private Rigidbody player;
+	//Script for the movement of the Player
 	
+	private Rigidbody player;
+	public float jumpHeight = -3f;
 	public float z = -4;
-	public float horizVel = 0;
-	public int laneNum = 0;
-	public float jump = 4.5f;
+	public float laneNum = 0.0000f;
 	public string controllocked = "n";
 	public Swipe swipeControls;
-	
-	public Vector3 newPostition;
+	public bool isSliding; 
+	public bool isJumping;
+	public float horizVel = 0;
 	
 	void Start () {
-		player = GetComponent<Rigidbody>();
-		
-	}
-	void Update () {
-		player.velocity = new Vector3(laneNum, 0f, 0f);
-		// the instructions what to do when it was swiped
-		
-		if ((swipeControls.SwipeLeft)&&(laneNum >= 0)&&(controllocked== "n")){
-			//horizVel = -1;
-			StartCoroutine (stopSlide());
-			controllocked = "y";
-			laneNum--;
-			
-		}
-		if ((swipeControls.SwipeRight)&&(laneNum <= 0)&&(controllocked== "n")){
-			//horizVel = 1;
-			StartCoroutine (stopSlide());
-			controllocked = "y";
-			laneNum++;
-			transform.position = new Vector3(laneNum, jump, z);
-		}
-		if ((swipeControls.SwipeUp)&&(controllocked== "n")){
-			//horizVel = 1;
-			StartCoroutine (stopSlide());
-			controllocked = "y";
-			//newPostition.y = 10;
-			player.velocity= new Vector3(laneNum, 0.2f, 0f);
-			jump = 5.5f;
-		}
-		
-		transform.position = new Vector3(laneNum, jump, z);
-		//Vector3 newPostition = transform.position;
-		//newPostition.x = laneNum;
-		//transform.position = newPostition;
+		player = GetComponent<Rigidbody>();	
 		
 	}
 	
-	IEnumerator stopSlide(){
-		yield return new WaitForSeconds (0.7f);
-		//horizVel = 10;
-		controllocked = "n";
-		player.velocity= new Vector3(laneNum, 0.5f, 0f);
-		jump = 4.5f;
+	void Update () {//Description what to do when the swipe input comes
+		player.velocity = new Vector3(horizVel, jumpHeight, z);
+		//Go left
+		if ((swipeControls.SwipeLeft)&&(laneNum >= 0)&&(controllocked== "n")){
+			if(laneNum == 1){
+				laneNum = 0.000f;
+			}else{
+				laneNum = -1.000f;	
+			}
+			horizVel = -3.3f;
+			controllocked = "y";
+			StartCoroutine(stopSlideToSide());
+		}
+		//Go right
+		if ((swipeControls.SwipeRight)&&(laneNum <= 0)&&(controllocked== "n")){
+			if(laneNum == -1){
+				laneNum = 0.000f;
+			}else{
+				laneNum = 1.000f;	
+			}
+			horizVel = 3.4f;
+			controllocked = "y";
+			StartCoroutine(stopSlideToSide());	
+		}
+		//Jump
+		if ((swipeControls.SwipeUp)&&(controllocked== "n")){
+			controllocked = "y";
+			jumpHeight = 3f;
+            StartCoroutine(startJump());
+			isJumping = true;
+		}
+		//Slide
+		if ((swipeControls.SwipeDown)&&(controllocked== "n")){
+			controllocked = "y";
+			isSliding = true;
+			//animation maybe
+			StartCoroutine(stopSliding());
+		}
 	}
+	//Control of the player timewise 
+	IEnumerator startJump(){
+        yield return new WaitForSeconds(0.5F);
+        jumpHeight = -3.5f;
+		StartCoroutine(stopJump());	
+	}
+	
+	IEnumerator stopJump(){
+        yield return new WaitForSeconds(0.5F);
+        controllocked = "n";
+		jumpHeight = 0f;
+		isJumping = false;
+		transform.position = new Vector3(laneNum, 4.37f, z);	
+	}
+	
+	IEnumerator stopSlideToSide(){
+        yield return new WaitForSeconds(0.3F);
+        horizVel = 0;
+        controllocked = "n";
+		transform.position = new Vector3(laneNum, 4.37f, z);
+		Debug.Log(laneNum);
+	}
+	
+	IEnumerator stopSliding(){
+        yield return new WaitForSeconds(0.5F);
+        isSliding = false;
+		controllocked = "n";
+	}
+	
 }
+
 
 		//X  Left and right
 		//Y Up and down
 		//Z Forward and backwards
-		

@@ -9,7 +9,7 @@ public class Move_Player : MonoBehaviour {
 	private Rigidbody player;
 	public float jumpHeight = -3f;
 	public float z = -4;
-	public float laneNum = 0;
+	public float laneNum = 0.0000f;
 	public string controllocked = "n";
 	public Swipe swipeControls;
 	public bool isSliding; 
@@ -18,6 +18,7 @@ public class Move_Player : MonoBehaviour {
 	
 	void Start () {
 		player = GetComponent<Rigidbody>();	
+		
 	}
 	
 	void Update () {//Description what to do when the swipe input comes
@@ -61,6 +62,7 @@ public class Move_Player : MonoBehaviour {
 	IEnumerator stopJump(){
         yield return new WaitForSeconds(0.5F);
         controllocked = "n";
+		jumpHeight = 0f;
 		isJumping = false;
 		transform.position = new Vector3(laneNum, 4.37f, z);	
 	}
