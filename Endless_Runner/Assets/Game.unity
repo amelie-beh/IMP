@@ -458,6 +458,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5000012
       objectReference: {fileID: 0}
+    - target: {fileID: 114200217600816736, guid: 2162bd8aa4f38c741a89055bfbffb163,
+        type: 2}
+      propertyPath: EndScreenCanvas
+      value: 
+      objectReference: {fileID: 895187671}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2162bd8aa4f38c741a89055bfbffb163, type: 2}
   m_IsPrefabParent: 0
@@ -1294,6 +1299,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114667281455558294, guid: 8a893f47d21036a4daac46a514fa45cc,
+        type: 2}
+      propertyPath: EndScreenCanvas
+      value: 
+      objectReference: {fileID: 895187671}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a893f47d21036a4daac46a514fa45cc, type: 2}
   m_IsPrefabParent: 0
@@ -2107,6 +2117,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114667281455558294, guid: 8a893f47d21036a4daac46a514fa45cc,
+        type: 2}
+      propertyPath: EndScreenCanvas
+      value: 
+      objectReference: {fileID: 895187671}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a893f47d21036a4daac46a514fa45cc, type: 2}
   m_IsPrefabParent: 0
@@ -3282,6 +3297,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5000012
       objectReference: {fileID: 0}
+    - target: {fileID: 114200217600816736, guid: 2162bd8aa4f38c741a89055bfbffb163,
+        type: 2}
+      propertyPath: EndScreenCanvas
+      value: 
+      objectReference: {fileID: 895187671}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2162bd8aa4f38c741a89055bfbffb163, type: 2}
   m_IsPrefabParent: 0
@@ -3919,6 +3939,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5000012
       objectReference: {fileID: 0}
+    - target: {fileID: 114200217600816736, guid: 2162bd8aa4f38c741a89055bfbffb163,
+        type: 2}
+      propertyPath: EndScreenCanvas
+      value: 
+      objectReference: {fileID: 895187671}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2162bd8aa4f38c741a89055bfbffb163, type: 2}
   m_IsPrefabParent: 0
@@ -5203,6 +5228,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5000012
       objectReference: {fileID: 0}
+    - target: {fileID: 114200217600816736, guid: 2162bd8aa4f38c741a89055bfbffb163,
+        type: 2}
+      propertyPath: EndScreenCanvas
+      value: 
+      objectReference: {fileID: 895187671}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2162bd8aa4f38c741a89055bfbffb163, type: 2}
   m_IsPrefabParent: 0
@@ -6247,6 +6277,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114667281455558294, guid: 8a893f47d21036a4daac46a514fa45cc,
+        type: 2}
+      propertyPath: EndScreenCanvas
+      value: 
+      objectReference: {fileID: 895187671}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a893f47d21036a4daac46a514fa45cc, type: 2}
   m_IsPrefabParent: 0
