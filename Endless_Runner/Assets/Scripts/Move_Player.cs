@@ -71,8 +71,13 @@ public class Move_Player : MonoBehaviour {
         yield return new WaitForSeconds(0.3F);
         horizVel = 0;
         controllocked = "n";
+		why();
+		//
+	}
+	
+	public void why(){
 		transform.position = new Vector3(laneNum, 4.37f, z); //warum wird diese zeile ignoriert
-		//Debug.Log(laneNum);
+		Debug.Log(laneNum);
 	}
 	
 	IEnumerator stopSliding(){
