@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ChangePosition_Controller : MonoBehaviour {
 
-	public GameObject[] ObjectHolders;
+	public GameObject[] ObstacleHolders;
 		
 	public void SetRandomActive () {
 		int r = Random.Range (0, 5);
-		if (ObjectHolders [r].activeInHierarchy == true) {
+		if (ObstacleHolders [r].activeInHierarchy == true) {
 			SetRandomActive ();
 		} else {
-			ObjectHolders [r].SetActive (true);
+			ObstacleHolders [r].SetActive (true);
 			Debug.Log (r);
 		}
 	}
