@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangePosition_Underground : MonoBehaviour {
+public class ChangePosition_ObjectHolder : MonoBehaviour {
+	
+	// If ObjectHolder is behind the player's sight, the position will be changed to create a loop of ObjectHolders
 
 	public GameObject[] objectHolders;
 
-	// If ObjectHolder is behind the player's sight, the position will be changed to create a loop of ObjectHolders
 	void FixedUpdate () {
 		for (int i = 0; i < 3; i++) {
 			if (objectHolders[i].transform.position.z <= -32) {

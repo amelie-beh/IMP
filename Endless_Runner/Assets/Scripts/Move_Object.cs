@@ -5,6 +5,7 @@ using UnityEngine;
 public class Move_Object : MonoBehaviour {
 
 	//Object is moving in the direction of the player
+	//Every 30 seconds the speed will be increased
 
 	private float movementSpeed = 4;
 
