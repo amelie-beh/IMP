@@ -1178,7 +1178,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: swipe down to duck
+  m_Text: wische nach unten um dich zu ducken
 --- !u!222 &265504207
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1904,6 +1904,72 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6a178208a29ace4ab7a464389d34477, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &632604904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 632604908}
+  - component: {fileID: 632604907}
+  - component: {fileID: 632604906}
+  - component: {fileID: 632604905}
+  m_Layer: 0
+  m_Name: TutorialEndCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &632604905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 632604904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9c9dc2adf823241926b204b8fdb4c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndScreenCanvas: {fileID: 1245828309}
+--- !u!114 &632604906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 632604904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdb58a8ece320754e800bb642c6330e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &632604907
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 632604904}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &632604908
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 632604904}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.527, z: 105}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &637737623
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,7 +3169,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: swipe to change the lane
+  m_Text: wische nach links und rechts, um die Spur zu wechseln
 --- !u!222 &999188307
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3170,7 +3236,7 @@ Transform:
   - {fileID: 1555398471}
   - {fileID: 1282030029}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1075888522
 GameObject:
@@ -3239,7 +3305,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: tap on the obstacle 5 times for it to disappear
+  m_Text: "tippe \xF6fter auf das Hindernis um es zu zerst\xF6ren"
 --- !u!222 &1075888525
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5692,7 +5758,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: swipe up to jump
+  m_Text: wische nach oben um zu springen
 --- !u!222 &1943859980
 CanvasRenderer:
   m_ObjectHideFlags: 0
