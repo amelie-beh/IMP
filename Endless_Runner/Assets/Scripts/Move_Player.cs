@@ -18,8 +18,7 @@ public class Move_Player : MonoBehaviour {
 	
 	void Start () {
 		player = GetComponent<Rigidbody>();	
-		
-	}
+		}
 	
 	void Update () {//Description what to do when the swipe input comes
 		player.velocity = new Vector3(horizVel, jumpHeight, z);
@@ -48,7 +47,8 @@ public class Move_Player : MonoBehaviour {
 		if ((swipeControls.SwipeDown)&&(controllocked== "n")){
 			controllocked = "y";
 			isSliding = true;
-			//animation maybe
+			jumpHeight = -3f;
+			transform.localScale = new Vector3(0.75f, 0.55f,0.55f);
 			StartCoroutine(stopSliding());
 		}
 	}
@@ -71,18 +71,14 @@ public class Move_Player : MonoBehaviour {
         yield return new WaitForSeconds(0.3F);
         horizVel = 0;
         controllocked = "n";
-		why();
-		//
-	}
-	
-	public void why(){
 		transform.position = new Vector3(laneNum, 4.37f, z); //warum wird diese zeile ignoriert
-		Debug.Log(laneNum);
 	}
 	
 	IEnumerator stopSliding(){
-        yield return new WaitForSeconds(0.5F);
+        yield return new WaitForSeconds(0.85F);
+		transform.localScale = new Vector3(0.75f, 0.75f,0.75f);
         isSliding = false;
+		jumpHeight = 0f;
 		controllocked = "n";
 	}
 	
