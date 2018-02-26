@@ -27,4 +27,7 @@ public class Main_Menu_Functions : MonoBehaviour {
 		PlayerPrefs.SetFloat("Audio", audioSlider.value);
 		PlayerPrefs.Save ();
 	}
+	public void StartTutorial(){
+		SceneManager.LoadScene(2);
+	}
 }
