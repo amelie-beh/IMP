@@ -1554,7 +1554,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4063305239174858, guid: c6a178208a29ace4ab7a464389d34477, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4063305239174858, guid: c6a178208a29ace4ab7a464389d34477, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2905,7 +2905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: tap on the lollipop wall to destroy
+  m_Text: tap on the obstacle 5 times for it to disappear
 --- !u!222 &1075888525
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4395,7 +4395,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4770064793060306, guid: ec3bd5123178cf34eb378dfbc350ec82, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 76.43
+      value: 81.43
       objectReference: {fileID: 0}
     - target: {fileID: 4770064793060306, guid: ec3bd5123178cf34eb378dfbc350ec82, type: 2}
       propertyPath: m_LocalRotation.x
