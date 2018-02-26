@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class Menu_Functions : MonoBehaviour {
 	//All functions that are needed in the Menu
-	private float startTime;
+	public float startTime;
 	public Text score;
 	public Text endScore;
 	public Canvas PauseCanvas;
 	public Canvas EndScreenCanvas;
-	private int t;
+	public int t;
 	public Slider audioSlider;
 	public float audio;
 	
