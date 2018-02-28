@@ -13,27 +13,27 @@ public class Move_Object : MonoBehaviour {
 		
 		transform.Translate(Vector3.back * movementSpeed * Time.deltaTime);
 
-		if (Time.time >= 30) {
+		if (Time.timeSinceLevelLoad >= 30) {
 			movementSpeed = 5;
 		}
 
-		if (Time.time >= 60) {
+		if (Time.timeSinceLevelLoad >= 60) {
 			movementSpeed = 6;
 		}
 
-		if (Time.time >= 90) {
+		if (Time.timeSinceLevelLoad >= 90) {
 			movementSpeed = 7;
 		}
 
-		if (Time.time >= 120) {
+		if (Time.timeSinceLevelLoad >= 120) {
 			movementSpeed = 8;
 		}
 
-		if (Time.time >= 150) {
+		if (Time.timeSinceLevelLoad >= 150) {
 			movementSpeed = 9;
 		}
 
-		if (Time.time >= 180) {
+		if (Time.timeSinceLevelLoad >= 180) {
 			movementSpeed = 10;
 		}
 

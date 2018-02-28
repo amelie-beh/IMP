@@ -105,7 +105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6021582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdb58a8ece320754e800bb642c6330e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b54b9c42f41e9f4c9ed40b033beed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &6021585 stripped
@@ -2184,7 +2184,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 698411440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdb58a8ece320754e800bb642c6330e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b54b9c42f41e9f4c9ed40b033beed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &698411443 stripped
@@ -2793,7 +2793,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 873657300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdb58a8ece320754e800bb642c6330e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b54b9c42f41e9f4c9ed40b033beed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &873657303 stripped
@@ -3120,6 +3120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSlider: {fileID: 1625357511}
   audio: 0
+  score: {fileID: 0}
 --- !u!1 &999188305
 GameObject:
   m_ObjectHideFlags: 0
