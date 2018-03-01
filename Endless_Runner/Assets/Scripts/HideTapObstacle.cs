@@ -5,7 +5,7 @@ using UnityEngine;
 public class HideTapObstacle : MonoBehaviour {
 
 	//If the object is clicked five times, it will be set as inactive
-	//After 5 seconds it will be set active again
+	//After 10 seconds it will be set active again
 
 	private int count = 0;
 	public bool isActive = true;
@@ -21,7 +21,7 @@ public class HideTapObstacle : MonoBehaviour {
 	}
 
 	IEnumerator SetActiveAgain() {
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(10);
 		isActive = true;
 		Collider c = gameObject.GetComponent<BoxCollider> ();
 		c.enabled = true;
