@@ -60,6 +60,7 @@ public class Menu_Functions : MonoBehaviour {
 		PauseCanvas.gameObject.SetActive(false);
 		Time.timeScale = 1;
 	}
+
 	public void SliderIsUsed(){
 		PlayerPrefs.SetFloat("Audio", audioSlider.value);
 		PlayerPrefs.Save ();

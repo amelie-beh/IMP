@@ -9,7 +9,7 @@ public class Move_Player : MonoBehaviour {
 	private Rigidbody player;
 	public float jumpHeight = -3f;
 	public float z = -4;
-	public float laneNum = 0.0000f;
+	public float laneNum = 0f;
 	public string controllocked = "n";
 	public Swipe swipeControls;
 	public bool isSliding; 
@@ -48,7 +48,7 @@ public class Move_Player : MonoBehaviour {
 			controllocked = "y";
 			isSliding = true;
 			jumpHeight = -3f;
-			transform.localScale = new Vector3(0.75f, 0.55f,0.55f);
+			transform.localScale = new Vector3(0.78f, 0.55f, 0.55f);  //Change the appearance
 			StartCoroutine(stopSliding());
 		}
 	}
@@ -71,7 +71,7 @@ public class Move_Player : MonoBehaviour {
         yield return new WaitForSeconds(0.3F);
         horizVel = 0;
         controllocked = "n";
-		transform.position = new Vector3(laneNum, 4.37f, z); //warum wird diese zeile ignoriert
+		transform.position = new Vector3(laneNum, 4.37f, z);
 	}
 	
 	IEnumerator stopSliding(){
@@ -83,8 +83,3 @@ public class Move_Player : MonoBehaviour {
 	}
 	
 }
-
-
-		//X  Left and right
-		//Y Up and down
-		//Z Forward and backwards
