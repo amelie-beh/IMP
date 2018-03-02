@@ -8,6 +8,7 @@ public class Menu_Functions : MonoBehaviour {
 	//All functions that are needed in the Menu
 	public float startTime;
 	public Text scoreText;
+	public Text currentScore;
 	public Text endScore;
 	public Canvas pauseCanvas;
 	public int score;
@@ -34,6 +35,7 @@ public class Menu_Functions : MonoBehaviour {
 			PlayerPrefs.SetInt("HS1", score);
 		}
 		endScore.text = ("Highscore = " + PlayerPrefs.GetInt("HS1").ToString() );
+		currentScore.text = ("Dein jetziges Ergebnis ist = " + score);
 		}
 	
 	

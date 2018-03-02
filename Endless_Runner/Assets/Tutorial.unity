@@ -2413,6 +2413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTime: 0
   scoreText: {fileID: 263901640}
+  currentScore: {fileID: 263901640}
   endScore: {fileID: 263901640}
   pauseCanvas: {fileID: 1761076216}
   score: 0
