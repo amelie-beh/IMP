@@ -28,18 +28,18 @@ public class Menu_Functions : MonoBehaviour {
 		 }
 		 
 		 //The shown highscore on the display
-		 score = (int)(Time.time - startTime); 
-		 scoreText.text = score.ToString();
+		score = (int)(Time.time - startTime); 
+		scoreText.text = score.ToString();
+		if(score > PlayerPrefs.GetInt("HS1")){ //Setting the highscore
+			PlayerPrefs.SetInt("HS1", score);
+		}
+		endScore.text = ("Highscore = " + PlayerPrefs.GetInt("HS1").ToString() );
 		}
 	
 	
 	public void StartPause(){
 		pauseCanvas.gameObject.SetActive(true);
 		Time.timeScale = 0;
-		if(score > PlayerPrefs.GetInt("HS1")){ //Setting the highscore
-			PlayerPrefs.SetInt("HS1", score);
-		}
-		endScore.text = ("Highscore = " + PlayerPrefs.GetInt("HS1").ToString() );
 	}
 	
 	public void GoTo_MainMenu(){
