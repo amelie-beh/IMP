@@ -6,15 +6,15 @@ public class ChangePosition_Controller : MonoBehaviour {
 
 	// This script is for setting a random ObstacleHolder as active
 
-	public GameObject[] ObstacleHolders;
-	public int r;
+	public GameObject[] obstacleHolders;
+	public int randomNumber;
 		
 	public void SetRandomActive () {
-		r = Random.Range (0, 10);
-		if (ObstacleHolders [r].activeInHierarchy == true) {
+		randomNumber = Random.Range (0, 10);
+		if (obstacleHolders [randomNumber].activeInHierarchy == true) {
 			SetRandomActive ();
 		} else {
-			ObstacleHolders [r].SetActive (true);
+			obstacleHolders [randomNumber].SetActive (true);
 		}
 	}
 }

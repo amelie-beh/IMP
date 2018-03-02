@@ -6421,7 +6421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eade8b71d0758cf43b96798e4a62e761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObstacleHolders:
+  obstacleHolders:
   - {fileID: 1124587752}
   - {fileID: 125043855}
   - {fileID: 808033649}
@@ -6432,7 +6432,7 @@ MonoBehaviour:
   - {fileID: 1624205932}
   - {fileID: 660291898}
   - {fileID: 399867804}
-  r: 0
+  randomNumber: 0
 --- !u!114 &1973596202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6455,8 +6455,8 @@ MonoBehaviour:
   - {fileID: 1624205932}
   - {fileID: 660291898}
   - {fileID: 399867804}
-  ObstacleHolderController: {fileID: 1973596200}
-  changePostitionController: {fileID: 1973596201}
+  obstacleHolderController: {fileID: 1973596200}
+  changePositionController: {fileID: 1973596201}
 --- !u!4 &1973596203
 Transform:
   m_ObjectHideFlags: 0

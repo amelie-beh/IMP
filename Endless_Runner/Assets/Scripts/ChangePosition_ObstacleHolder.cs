@@ -5,22 +5,22 @@ using UnityEngine;
 public class ChangePosition_ObstacleHolder : MonoBehaviour {
 	
 	public GameObject[] obstacleHolders;
-	public GameObject ObstacleHolderController;
-	public ChangePosition_Controller changePostitionController;
+	public GameObject obstacleHolderController;
+	public ChangePosition_Controller changePositionController;
 	private int random1;
 	private int random2;
 	private int random3;
 
-	//Setting three random ObstacleHolders as active to start the game
+	//Setting three random ObstacleHolders as active to start the game and set the start positions
 	void Start() {
-		changePostitionController.SetRandomActive ();
-		random1 = changePostitionController.r;
+		changePositionController.SetRandomActive ();
+		random1 = changePositionController.randomNumber;
 		obstacleHolders[random1].transform.position = new Vector3 (0.5f, 3, 18);
-		changePostitionController.SetRandomActive ();
-		random2 = changePostitionController.r;
+		changePositionController.SetRandomActive ();
+		random2 = changePositionController.randomNumber;
 		obstacleHolders[random2].transform.position = new Vector3 (0.5f, 3, 68);
-		changePostitionController.SetRandomActive ();
-		random3 = changePostitionController.r;
+		changePositionController.SetRandomActive ();
+		random3 = changePositionController.randomNumber;
 		obstacleHolders[random3].transform.position = new Vector3 (0.5f, 3, 118);
 	}
 
@@ -30,8 +30,8 @@ public class ChangePosition_ObstacleHolder : MonoBehaviour {
 			if (obstacleHolders[i].transform.position.z <= -32) {
 				obstacleHolders[i].transform.position = new Vector3 (0.5f, 3, 118);
 				obstacleHolders[i].SetActive (false);
-				changePostitionController = ObstacleHolderController.GetComponent<ChangePosition_Controller> ();
-				changePostitionController.SetRandomActive ();
+				changePositionController = obstacleHolderController.GetComponent<ChangePosition_Controller> ();
+				changePositionController.SetRandomActive ();
 			}
 		}
 	}
