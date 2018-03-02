@@ -34,8 +34,8 @@ public class Menu_Functions : MonoBehaviour {
 		if(score > PlayerPrefs.GetInt("HS1")){ //Setting the highscore
 			PlayerPrefs.SetInt("HS1", score);
 		}
-		endScore.text = ("Highscore = " + PlayerPrefs.GetInt("HS1").ToString() );
-		currentScore.text = ("Dein jetziges Ergebnis ist = " + score);
+		endScore.text = ("Längste Überlebensspanne: " + PlayerPrefs.GetInt("HS1").ToString() + " Meter");
+		currentScore.text = ("Batman hat " + score + " Meter überlebt");
 		}
 	
 	
