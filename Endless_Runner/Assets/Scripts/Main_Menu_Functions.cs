@@ -9,6 +9,7 @@ public class Main_Menu_Functions : MonoBehaviour {
 	public Slider audioSlider;
 	public float audio;
 	public Text score;
+	
 	public void Start(){
 		audio = PlayerPrefs.GetFloat("Audio");
 		audioSlider.value = audio;
@@ -21,7 +22,7 @@ public class Main_Menu_Functions : MonoBehaviour {
 	
 	public void Quit(){
 		#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+			UnityEditor.EditorApplication.isPlaying = false;
 		#else
 			Application.Quit ();
 		#endif

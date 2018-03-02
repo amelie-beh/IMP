@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Swipe : MonoBehaviour {
-
-	//Variables we need
+	//Script to find out if and in which direction the player swiped
 	private bool tap, swipeLeft, swipeRight, swipeUp, swipeDown;
 	private bool isDraging = false;
 	private Vector2 startTouch, swipeDelta;
@@ -13,13 +12,13 @@ public class Swipe : MonoBehaviour {
 	private void Update () {
 		
 		tap = swipeLeft = swipeRight = swipeUp = swipeDown = false;
-		
+		//information if the display is touched
 		#region Standalone Inputs
-		if(Input.GetMouseButtonDown(0)){//when sombody touches the display set it true
+		if(Input.GetMouseButtonDown(0)){
 			tap = true;
 			isDraging = true;
 			startTouch = Input.mousePosition;
-		} else if(Input.GetMouseButtonUp(0)){ //end of touch = false
+		} else if(Input.GetMouseButtonUp(0)){
 			Reset();
 			isDraging = false;
 		}
@@ -72,13 +71,12 @@ public class Swipe : MonoBehaviour {
 			Reset();
 		}
 	}
-	//if touch ended do this
+	//if touch ended reset the values
 	private void Reset () {
 		startTouch =  swipeDelta = Vector2.zero;
 		isDraging = false;	
 	}
 	//Set what to give out
-
 	public bool Tap{get { return tap; }}
 	public Vector2 SwipeDelta{get { return swipeDelta;} }
 	public bool SwipeLeft {get {return swipeLeft; } }

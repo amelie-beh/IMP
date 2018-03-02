@@ -8,9 +8,9 @@ public class Move_Player : MonoBehaviour {
 	
 	private Rigidbody player;
 	public float jumpHeight = -3f;
-	public float z = -4;
+	public float zPosition = -4;
 	public float laneNum = 0f;
-	public string controllocked = "n";
+	public bool controllocked = false;
 	public Swipe swipeControls;
 	public bool isSliding; 
 	public bool isJumping;
@@ -21,31 +21,31 @@ public class Move_Player : MonoBehaviour {
 		}
 	
 	void Update () {//Description what to do when the swipe input comes
-		player.velocity = new Vector3(horizVel, jumpHeight, z);
+		player.velocity = new Vector3(horizVel, jumpHeight, 0f);
 		//Go left
-		if ((swipeControls.SwipeLeft)&&(laneNum >= 0)&&(controllocked== "n")){
+		if ((swipeControls.SwipeLeft)&&(laneNum >= 0)&&(controllocked== false)){
 			laneNum--;
 			horizVel = -3.3f;
-			controllocked = "y";
+			controllocked = true;
 			StartCoroutine(stopSlideToSide());
 		}
 		//Go right
-		if ((swipeControls.SwipeRight)&&(laneNum <= 0)&&(controllocked== "n")){
+		if ((swipeControls.SwipeRight)&&(laneNum <= 0)&&(controllocked== false)){
 			horizVel = 3.4f;
-			controllocked = "y";
+			controllocked = true;
 			laneNum++;
 			StartCoroutine(stopSlideToSide());	
 		}
 		//Jump
-		if ((swipeControls.SwipeUp)&&(controllocked== "n")){
-			controllocked = "y";
+		if ((swipeControls.SwipeUp)&&(controllocked== false)){
+			controllocked = true;
 			jumpHeight = 3f;
             StartCoroutine(startJump());
 			isJumping = true;
 		}
 		//Slide
-		if ((swipeControls.SwipeDown)&&(controllocked== "n")){
-			controllocked = "y";
+		if ((swipeControls.SwipeDown)&&(controllocked== false)){
+			controllocked = true;
 			isSliding = true;
 			jumpHeight = -3f;
 			transform.localScale = new Vector3(0.78f, 0.55f, 0.55f);  //Change the appearance
@@ -61,17 +61,17 @@ public class Move_Player : MonoBehaviour {
 	
 	IEnumerator stopJump(){
         yield return new WaitForSeconds(0.5F);
-        controllocked = "n";
+        controllocked = false;
 		jumpHeight = 0f;
 		isJumping = false;
-		transform.position = new Vector3(laneNum, 4.37f, z);	
+		transform.position = new Vector3(laneNum, 4.37f, zPosition);	
 	}
 	
 	IEnumerator stopSlideToSide(){
         yield return new WaitForSeconds(0.3F);
         horizVel = 0;
-        controllocked = "n";
-		transform.position = new Vector3(laneNum, 4.37f, z);
+        controllocked = false;
+		transform.position = new Vector3(laneNum, 4.37f, zPosition);
 	}
 	
 	IEnumerator stopSliding(){
@@ -79,7 +79,7 @@ public class Move_Player : MonoBehaviour {
 		transform.localScale = new Vector3(0.75f, 0.75f,0.75f);
         isSliding = false;
 		jumpHeight = 0f;
-		controllocked = "n";
+		controllocked = false;
 	}
 	
 }

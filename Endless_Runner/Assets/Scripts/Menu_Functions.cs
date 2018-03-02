@@ -7,11 +7,10 @@ using UnityEngine.UI;
 public class Menu_Functions : MonoBehaviour {
 	//All functions that are needed in the Menu
 	public float startTime;
-	public Text score;
+	public Text scoreText;
 	public Text endScore;
-	public Canvas PauseCanvas;
-	public Canvas EndScreenCanvas;
-	public int t;
+	public Canvas pauseCanvas;
+	public int score;
 	public Slider audioSlider;
 	public float audio;
 	
@@ -20,7 +19,7 @@ public class Menu_Functions : MonoBehaviour {
 		audioSlider.value = audio;
 		startTime = Time.time;
 		Time.timeScale = 1;
-		t = 0;
+		score = 0;
 	}
 
 	void Update () {
@@ -29,19 +28,18 @@ public class Menu_Functions : MonoBehaviour {
 		 }
 		 
 		 //The shown highscore on the display
-		 t = (int)(Time.time - startTime); 
-		 score.text = t.ToString();
-		 
-		if(t > PlayerPrefs.GetInt("HS1")){ //Setting the highscore
-			PlayerPrefs.SetInt("HS1", t);
-		}
-		endScore.text = ("Highscore = " + PlayerPrefs.GetInt("HS1").ToString() );
+		 score = (int)(Time.time - startTime); 
+		 scoreText.text = score.ToString();
 		}
 	
 	
 	public void StartPause(){
-		PauseCanvas.gameObject.SetActive(true);
+		pauseCanvas.gameObject.SetActive(true);
 		Time.timeScale = 0;
+		if(score > PlayerPrefs.GetInt("HS1")){ //Setting the highscore
+			PlayerPrefs.SetInt("HS1", score);
+		}
+		endScore.text = ("Highscore = " + PlayerPrefs.GetInt("HS1").ToString() );
 	}
 	
 	public void GoTo_MainMenu(){
@@ -57,7 +55,7 @@ public class Menu_Functions : MonoBehaviour {
 	}
 	
 	public void GoOn(){
-		PauseCanvas.gameObject.SetActive(false);
+		pauseCanvas.gameObject.SetActive(false);
 		Time.timeScale = 1;
 	}
 

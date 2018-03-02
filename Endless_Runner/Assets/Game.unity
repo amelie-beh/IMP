@@ -2466,9 +2466,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 0
-  z: -4
+  zPosition: -4
   laneNum: 0
-  controllocked: n
+  controllocked: 0
   swipeControls: {fileID: 744311578}
   isSliding: 0
   isJumping: 0
@@ -3255,11 +3255,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 0
-  score: {fileID: 2059161598}
+  scoreText: {fileID: 2059161598}
   endScore: {fileID: 811691316}
-  PauseCanvas: {fileID: 1761076216}
-  EndScreenCanvas: {fileID: 895187671}
-  t: 0
+  pauseCanvas: {fileID: 1761076216}
+  score: 0
   audioSlider: {fileID: 1625357511}
   audio: 0
 --- !u!114 &972139330
