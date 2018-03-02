@@ -14,8 +14,7 @@ public class HideMeshRenderer : MonoBehaviour {
 			m.enabled = false;
 		} else {
 			MeshRenderer m = gameObject.GetComponent<MeshRenderer> ();
-			m.enabled = true;
-			
+			m.enabled = true;	
 		}
 		
 	}

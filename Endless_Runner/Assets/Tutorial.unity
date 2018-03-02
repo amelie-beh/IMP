@@ -1933,7 +1933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9c9dc2adf823241926b204b8fdb4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndScreenCanvas: {fileID: 1245828309}
+  endScreenCanvas: {fileID: 0}
 --- !u!114 &632604906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2271,7 +2271,7 @@ Transform:
   m_LocalScale: {x: 4.500004, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 873657303}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &744311571
 GameObject:
@@ -2372,9 +2372,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 0
-  z: -4
+  zPosition: -4
   laneNum: 0
-  controllocked: n
+  controllocked: 144
   swipeControls: {fileID: 744311578}
   isSliding: 0
   isJumping: 0
@@ -2416,7 +2416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782899a63d372f240a1de9dba8c2ba61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndScreenCanvas: {fileID: 895187671}
+  endScreenCanvas: {fileID: 1245828309}
 --- !u!95 &744311580
 Animator:
   serializedVersion: 3
@@ -2845,6 +2845,11 @@ Prefab:
       propertyPath: EndScreenCanvas
       value: 
       objectReference: {fileID: 895187671}
+    - target: {fileID: 114667281455558294, guid: 8a893f47d21036a4daac46a514fa45cc,
+        type: 2}
+      propertyPath: endScreenCanvas
+      value: 
+      objectReference: {fileID: 1245828309}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a893f47d21036a4daac46a514fa45cc, type: 2}
   m_IsPrefabParent: 0
@@ -3022,7 +3027,7 @@ Transform:
   m_LocalScale: {x: 4.500002, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 873657303}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &972139328
 GameObject:
@@ -3055,11 +3060,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 0
-  score: {fileID: 263901640}
+  scoreText: {fileID: 263901640}
   endScore: {fileID: 263901640}
-  PauseCanvas: {fileID: 1761076216}
-  EndScreenCanvas: {fileID: 895187671}
-  t: 0
+  pauseCanvas: {fileID: 1761076216}
+  score: 0
   audioSlider: {fileID: 1625357511}
   audio: 0
 --- !u!114 &972139330
@@ -3365,6 +3369,11 @@ Prefab:
       propertyPath: EndScreenCanvas
       value: 
       objectReference: {fileID: 895187671}
+    - target: {fileID: 114200217600816736, guid: 2162bd8aa4f38c741a89055bfbffb163,
+        type: 2}
+      propertyPath: endScreenCanvas
+      value: 
+      objectReference: {fileID: 1245828309}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2162bd8aa4f38c741a89055bfbffb163, type: 2}
   m_IsPrefabParent: 0
@@ -4232,8 +4241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d177046801dd25441bd0e442ae460266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swipeControls: {fileID: 1351018946}
-  player: {fileID: 1127294854}
 --- !u!114 &1351018946
 MonoBehaviour:
   m_ObjectHideFlags: 0
